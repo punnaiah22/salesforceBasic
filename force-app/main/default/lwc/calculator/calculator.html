@@ -1,0 +1,9 @@
+<template>
+    <lightning-input type="number" label="Number1" onchange={HandleInput1}></lightning-input>
+    <lightning-input type="number" label="Number2" onchange={HandleInput2}></lightning-input>
+    <lightning-button variant="base" label="Addition"  onclick={DoAdditio}></lightning-button>
+    <lightning-button variant="brand" label="Substraction"  onclick={DoSubstraction}></lightning-button>
+    <lightning-button variant="neutral" label="Multiplication"  onclick={DoMultiplication}></lightning-button>
+    
+      <p>Result={output}</p>
+</template>

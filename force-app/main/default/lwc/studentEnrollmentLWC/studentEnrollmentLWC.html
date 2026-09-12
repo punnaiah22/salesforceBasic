@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Student Registration form" icon-name="standard:account">
+        <lightning-button-icon  icon-name="utility:add" variant="border-filled" onclick={addMoreData} slot="actions"></lightning-button-icon>
+        <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p>
+     <lightning-input type="text" variant="standard" name="name" label="Name" placeholder="type here..." onchange={handleNamechange}></lightning-input>
+    <lightning-input type="text" variant="standard" name="name" label="Phone" placeholder="Enter Phone Number" onchange={handlePhonechange} onblur={handlePhoneMouseout}></lightning-input>
+    <lightning-input type="text" variant="standard" name="name" label="Email" placeholder="Enter Email" onchange={handleEmailchange}></lightning-input>
+    <lightning-input type="text" variant="standard" name="name" label="Education" placeholder="Enter latest Education" onchange={handleEducationchange}></lightning-input>
+<lightning-button variant="Brand" label="Submit" title="Submit Form" onclick={handleClick}></lightning-button>
+<p slot="footer">Card Footer</p>
+</lightning-card>
+</template>

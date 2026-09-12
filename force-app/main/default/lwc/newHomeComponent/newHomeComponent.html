@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Insurance Overview">
+        <lightning-tabset variant="vertical" active-tab-value={activeTab}>
+
+            <lightning-tab label="logins" value="logins" onactive={handleActive}>
+                <c-login></c-login>
+            </lightning-tab>
+
+            <lightning-tab label="loans" value="loans" onactive={handleActive}>
+                <c-loan-details></c-loan-details>
+            </lightning-tab>
+
+            <lightning-tab label="customers" value="customers" onactive={handleActive}>
+                <c-loanenquirey-form></c-loanenquirey-form>
+            </lightning-tab>
+
+            <lightning-tab label="cases" value="cases" onactive={handleActive}>
+                <c-loanenquirey-form></c-loanenquirey-form>
+            </lightning-tab>
+
+        </lightning-tabset>
+    </lightning-card>
+</template>

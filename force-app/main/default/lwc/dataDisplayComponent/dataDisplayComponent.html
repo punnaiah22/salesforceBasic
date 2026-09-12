@@ -1,0 +1,77 @@
+<template>
+    <lightning-card variant="Narrow" title="Data Display Demo" icon-name="standard:account">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-input type="text" variant="standard" name="input1" label="Enter Your Income Salary" onchange={handleInputChange}></lightning-input>
+                <lightning-input type="text" variant="standard" name="input2" label="Enter Your Obligation/Current EMI" onchange={handleInputChange}></lightning-input>
+                <lightning-button variant="Brand" label="Check Eligibility" onclick={handleSubmit}></lightning-button>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="8" padding="around-small">
+                Hey here is Your Result : {result}, <br/>
+                Your Eligible LoanAmount : {eligibleAmount}
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card variant="Narrow" title="Contact us" icon-name="standard:account">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-input type="text" variant="standard" name="input3" label="Enter Your Name" onchange={handleInputChange}></lightning-input>
+                <lightning-input type="text" variant="standard" name="input4" label="Enter Your Email" onchange={handleInputChange}></lightning-input>
+                <lightning-button variant="Brand" label="Contt us" onclick={handleContactUS}></lightning-button>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="8" padding="around-small">
+                {customerData.CustomerName} <br/>
+                {customerData.PhoneNumber}
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card variant="Narrow" title="Data in Table Format using Data table" icon-name="standard:account">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-datatable
+                    key-field="CustomerName"
+                    data={orderList}
+                    columns={OrderscolumnsList}>
+                </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card variant="Narrow" title="Data Display with for:each" icon-name="standard:account">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="6" padding="around-small">
+                <template for:each={customersData} for:item="customer">
+                    <lightning-card key={customer.CustomerName} variant="Narrow" title="Customer Details" icon-name="standard:account">
+                        <lightning-button-icon  icon-name="utility:edit" alternative-text="Show More" slot="actions"></lightning-button-icon>
+                     <lightning-button  icon-name="utility:delete" label="Delete" alternative-text="Show More" slot="actions"></lightning-button>
+
+                        Customer Name : {customer.CustomerName} </br>
+                        Customer Phone : {customer.PhoneNumber}
+                    </lightning-card>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card variant="Narrow" title="Data Display with Iterator" icon-name="standard:account">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="6" padding="around-small">
+            <lightning-accordion allow-multiple-sections-open active-section-name="A" onsectiontoggle={handleSectionToggle} >
+                 <template  iterator:record={orderList}>
+                        <lightning-accordion-section key={record.name} name="A" label="Accordion Title A">
+                         {record.value.name} </br>
+                         {record.value.amount} </br>
+                         {record.value.quantity} </br>
+                        </lightning-accordion-section>
+                       
+                </template>
+            </lightning-accordion>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

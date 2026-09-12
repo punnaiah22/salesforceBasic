@@ -1,0 +1,15 @@
+<template>
+    <lightning-button
+        label="Refresh Data"
+        icon-name="utility:refresh"
+        onclick={handleRefreshClick}>
+    </lightning-button>
+    
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={loanRecordList}
+                columns={columnList}>
+        </lightning-datatable>
+    </div>
+</template>

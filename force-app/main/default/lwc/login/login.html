@@ -1,0 +1,33 @@
+<template>
+    <lightning-button variant="success" label="Get All Login Details" onclick={getAllRecords}></lightning-button>
+
+
+    <lightning-datatable key-field="id" data={loginDetailList} columns={columnsList}>
+    </lightning-datatable>
+
+
+
+    <template lwc:if={showsignin}>
+        <lightning-input label="Enter Your First Name"></lightning-input>
+        <lightning-input label="Enter Last Name"></lightning-input>
+    </template>
+
+    <template lwc:if={showsignup}>
+        <lightning-input label="Enter Your First Name" name="input1" onchange={handleinpuchange}></lightning-input>
+        <lightning-input label="Enter Last Name" name="input2" onchange={handleinpuchange}></lightning-input>
+        <lightning-input label="Phone" name="input3" onchange={handleinpuchange}></lightning-input>
+        <lightning-input label="En ter Email" name="input4" onchange={handleinpuchange}></lightning-input>
+        <lightning-input label="Enter User Name" name="input5" onchange={handleinpuchange}></lightning-input>
+        <lightning-input label="Enter Your Password" name="input6" onchange={handleinpuchange}></lightning-input>
+    </template>
+
+
+        <lightning-button variant="Brand" label="Login" onclick={handlesignin}></lightning-button>
+        <lightning-button variant="Brand" label="Signup" onclick={handlesignup}></lightning-button>
+
+    <template lwc:if={showsubmit}>
+        <lightning-button variant="Success" label="Submit" onclick={handlesubmit}></lightning-button>
+    </template>
+
+
+</template>

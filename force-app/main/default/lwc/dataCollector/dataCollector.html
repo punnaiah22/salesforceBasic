@@ -1,0 +1,13 @@
+<template>
+    <!-- This is child component whatever we given here that will display in parent -->
+<lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+   <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+   <lightning-input type="text" variant="standard" name="customerName" label="Name" onchange={handleInput}></lightning-input>
+   <lightning-input type="text" variant="standard" name="name" label="Phone" onchange={handleInput} ></lightning-input>
+   <lightning-input type="number" variant="standard" name="name" label="Salary" onchange={handleInput}></lightning-input>
+   <lightning-input type="checkbox" variant="standard" name="name" label="Looking For Loan" ></lightning-input>
+    <lightning-input type="range" name="input5" label="How much Loan Required? Loan range in Lakhs" min="100" max="5000" value="250" onchange={handleBarChange}></lightning-input>
+    <span style="color: green ; font-size:20px"> Loan Amount : {sliderValue} </span>  </br>
+    <lightning-button variant="success" label="Submit" title="titleName" onclick={handleSubmit}></lightning-button>
+</lightning-card>
+</template>

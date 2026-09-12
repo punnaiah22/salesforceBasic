@@ -1,0 +1,25 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="6">
+            Loan Entry:
+        <c-data-collector onloandsubmission={handleEvent}></c-data-collector> // this is one of child  component we can reuse whereevere we want
+        </lightning-layout-item>
+        
+         <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="3">
+           SummaryOf Details:
+           </br>
+           Hey we have captured your Information, We will get back to you soon . </br>
+           here are your Details</br>
+           Name : {cNameFromChild} <br/>
+           Phone : {cPhoneFromChild} <br/>
+           cLoanRequired : {LoanamountRequested} <br/>
+
+           Thank YZou
+
+
+        </lightning-layout-item>
+        
+    </lightning-layout>
+    
+    <c-accounts-display-component></c-accounts-display-component>   // this is one of child  component 
+</template>

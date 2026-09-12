@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Loan Enquirey Form" icon-name="action:add_photo_video">
+
+        <lightning-layout multiple-rows>
+
+            <!-- Loan Information -->
+            <lightning-layout-item size="7" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="5">
+
+                <lightning-input type="text" name="Custname" label="Name" placeholder="Please Enter Your Name" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="number" name="Custphone" label="Phone" placeholder="Phone Number should be 10 digits" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="email" name="Custemail" label="Email" placeholder="Please Enter Personal Email Only" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custpan" label="PAN" placeholder="Please Enter PAN Number" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custaadhar" label="Aadhar" placeholder="Please Enter Aadhar Number" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custcompany" label="Current Company" placeholder="Please Enter Current Company" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="custexp" label="Total Experience" placeholder="Please Enter Total Experience" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custsalary" label="Salary" placeholder="Please Enter Salary" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custsalarydate" label="Salary Date" placeholder="Please Enter Salary Date" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="Custobligation" label="Current Obligation" placeholder="Please Enter Current Obligation" onchange={hanleLoanFormData}></lightning-input>
+
+                <lightning-input type="text" name="CustCibilscore" label="CIBIL Score" placeholder="Please Enter Latest CIBIL Score" onchange={hanleLoanFormData}></lightning-input>
+
+            </lightning-layout-item>
+
+            <!-- Summary -->
+            <lightning-layout-item size="5" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="7">
+
+                <lightning-card title="Loan Details Summary" icon-name="action:add_photo_video">
+
+                    <div style="background-color:green; color:white; font-size:15px; padding:10px;">
+                        Customer Name: {name}<br/>
+                        Customer Phone: {phone}<br/>
+                        Customer Email: {email}<br/>
+                    </div>
+
+                    <br/>
+
+                    <div style="background-color:yellow; font-size:14px; padding:10px;">
+                        Customer Company: {company}<br/>
+                        Customer PAN: {pan}<br/>
+                    </div>
+
+                </lightning-card>
+
+            </lightning-layout-item>
+
+        </lightning-layout>
+
+    </lightning-card>
+</template>
