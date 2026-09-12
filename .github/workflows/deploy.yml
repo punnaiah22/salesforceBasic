@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy to Salesforce
         run: |
-          sf project deploy start --source-dir force-app --target-org "Insurance Project"
+          sf project deploy start --source-dir force-app --target-org "Insurance Project" --wait 10
